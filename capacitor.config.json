@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "ion-qorebase",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

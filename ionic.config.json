@@ -1,0 +1,7 @@
+{
+  "name": "ion-qorebase",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
