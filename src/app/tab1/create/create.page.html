@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create To do</ion-title>
+    <ion-buttons slot="end" fill="clear" (click)="closeModal()" class="ion-padding">
+      <ion-icon slot="icon-only" name="close"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <form #form="ngForm" (ngSubmit)="createData(form)">
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input ngModel name="name" type="name" required>
+            </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Title</ion-label>
+            <ion-textarea ngModel name="title" required>
+            </ion-textarea>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Description</ion-label>
+            <ion-textarea ngModel name="description" required>
+            </ion-textarea>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Image Link</ion-label>
+            <ion-input ngModel name="img" type="name" placeholder="name" required>
+            </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-button size="medium" type="submit" expand="block" [disabled]="form.invalid">Submit</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-card>
+</ion-content>
