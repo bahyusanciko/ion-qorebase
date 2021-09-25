@@ -24,16 +24,8 @@ export class CreatePage implements OnInit {
     this.loading = await this.loadingController.create({
       message: "Loading data from api",
     });
-    let create = {
-      name: form.value.name,
-      title: form.value.title,
-      description: form.value.description,
-      img: form.value.img,
-      createdAt: '2021-09-15 20:55:45',
-      updatedAt: '2021-09-15 20:55:45',
-    }
     this.api
-      .createData(`allBlogs`, create)
+      .createData(`allBudgets`, form.value)
       .then((res: any) => {
         this.alert('Success', 'Created Your Data');
         this.closeModal();

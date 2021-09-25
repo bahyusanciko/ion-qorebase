@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Create To do</ion-title>
+    <ion-title>Create Budget</ion-title>
     <ion-buttons slot="end" fill="clear" (click)="closeModal()" class="ion-padding">
       <ion-icon slot="icon-only" name="close"></ion-icon>
     </ion-buttons>
@@ -13,30 +13,32 @@
       <ion-row>
         <ion-col size="12">
           <ion-item>
-            <ion-label position="floating">Name</ion-label>
-            <ion-input ngModel name="name" type="name" required>
+            <ion-label position="floating">Item</ion-label>
+            <ion-input ngModel name="item" type="text" required>
             </ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="12">
           <ion-item>
-            <ion-label position="floating">Title</ion-label>
-            <ion-textarea ngModel name="title" required>
-            </ion-textarea>
-          </ion-item>
-        </ion-col>
-        <ion-col size="12">
-          <ion-item>
-            <ion-label position="floating">Description</ion-label>
-            <ion-textarea ngModel name="description" required>
-            </ion-textarea>
-          </ion-item>
-        </ion-col>
-        <ion-col size="12">
-          <ion-item>
-            <ion-label position="floating">Image Link</ion-label>
-            <ion-input ngModel name="img" type="name" placeholder="name" required>
+            <ion-label position="floating">Price</ion-label>
+            <ion-input ngModel name="price" type="number" required>
             </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Amount</ion-label>
+            <ion-input ngModel name="amount" type="number" required>
+            </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Type</ion-label>
+            <ion-select interface="popover" placeholder="choose one" ngModel name="type" >
+              <ion-select-option value="income">Income</ion-select-option>
+              <ion-select-option value="expense">Expense</ion-select-option>
+            </ion-select>
           </ion-item>
         </ion-col>
         <ion-col size="12">

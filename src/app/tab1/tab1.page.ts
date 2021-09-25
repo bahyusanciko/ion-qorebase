@@ -15,6 +15,8 @@ import { CreatePage } from "./create/create.page";
 export class Tab1Page implements OnInit {
   listData: any
   loading: any
+  TotalIncome:number = 0
+  TotalExpense: number = 0
   constructor(
     private api: QoreService,
     public alertController: AlertController,
@@ -28,8 +30,21 @@ export class Tab1Page implements OnInit {
   }
 
   async getData(){
-    await this.api.getData('allBlogs').then((res) => {
+    const loading = await this.loadingController.create({
+      duration: 2000,
+    });
+    await loading.present();
+    await loading.onDidDismiss();
+    await this.api.getData('allBudgets').then((res) => {
       this.listData = res.nodes
+      this.listData.forEach(element => {
+        if (element.type === 'income') {
+          this.TotalIncome += element.price * element.amount
+        }else{
+          this.TotalExpense += element.price * element.amount
+        }
+      });
+      console.log(this.listData)
     }).catch((err) => {
       this.alert('ERROR', 'Silahkan Coba lagi');
     });
@@ -40,7 +55,10 @@ export class Tab1Page implements OnInit {
       component: CreatePage,
     });
     modal.onDidDismiss().then((modalData) => {
-      this.ngOnInit();
+      this.listData = []
+      this.TotalIncome = 0
+      this.TotalExpense = 0
+      this.getData();
     });
 
     return await modal.present();

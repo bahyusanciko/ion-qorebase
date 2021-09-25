@@ -17,7 +17,7 @@ export class QoreService {
   async getData(table) {
     return await client
       .view(table)
-      .readRows({ offset: 0, order: "desc" })
+      .readRows({ offset: 0, updatedAt: "desc" })
       .toPromise().then((res) => {
         this.authSubject.next(true);
         console.log(res)
