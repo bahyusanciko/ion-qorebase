@@ -20,7 +20,7 @@ export class QoreService {
       .readRows({ offset: 0, updatedAt: "desc" })
       .toPromise().then((res) => {
         this.authSubject.next(true);
-        // console.log(res)
+        console.log(res)
         return res.data
       }).catch((err) => {
         this.authSubject.next(false);
@@ -31,7 +31,7 @@ export class QoreService {
   async createData(table,data){
     return await client.view(table).insertRow({ ...data }).then((res) => {
       this.authSubject.next(true);
-      // console.log(res)
+      console.log(res)
       return res.data
     }).catch((err) => {
       this.authSubject.next(false);
