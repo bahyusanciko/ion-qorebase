@@ -8,11 +8,11 @@ import {
 import { CreatePage } from "./create/create.page";
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  selector: 'app-budget',
+  templateUrl: 'budget.page.html',
+  styleUrls: ['budget.page.scss']
 })
-export class Tab1Page implements OnInit {
+export class BudgetPage implements OnInit {
   listData: any
   loading: any
   TotalIncome:number = 0

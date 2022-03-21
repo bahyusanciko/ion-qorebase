@@ -2,9 +2,9 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Tab1Page } from './tab1.page';
+import { BudgetPage } from './budget.page';
 
-import { Tab1PageRoutingModule } from './tab1-routing.module';
+import { BudgetPageRoutingModule } from './budget-routing.module';
 import { CreatePageModule } from "./create/create.module";
 
 @NgModule({
@@ -12,9 +12,9 @@ import { CreatePageModule } from "./create/create.module";
     IonicModule,
     CommonModule,
     FormsModule,
-    Tab1PageRoutingModule,
+    BudgetPageRoutingModule,
     CreatePageModule
   ],
-  declarations: [Tab1Page]
+  declarations: [BudgetPage]
 })
-export class Tab1PageModule {}
+export class BudgetPageModule {}
